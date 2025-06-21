@@ -6,16 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coopers - Organize suas tarefas diárias</title>
 
-    <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      href="./assets/img/favicon.png"
-      type="image/x-icon"
-    />
-    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon" />
-
-    <!-- Meta tags -->
-    <meta name="theme-color" content="#3A6DA7" />
+    <!-- Meta tags de acessibilidade e SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Portuguese" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#4ac959" />
     <meta
       name="description"
       content="Organize suas tarefas diárias com a Coopers. Planos flexíveis e ferramentas poderosas para sua produtividade."
@@ -27,8 +23,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-    <!-- CSS -->
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon" />
 
+    <!-- CSS -->
     <link href="https://fonts.cdnfonts.com/css/soleil" rel="stylesheet" />
     <link
       href="./assets/vendor/bootstrap/css/bootstrap.min.css"
@@ -37,21 +40,76 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
     />
-    <link href="./assets/vendor/css/aos.css" rel="stylesheet" />
-    <link href="./assets/css/style.css" rel="stylesheet" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      href="./assets/vendor/css/aos.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+
+    <!-- Fontes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Carousel -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      media="print"
+      onload="this.media='all'"
     />
+
+    <!-- Fallback para CSS não crítico -->
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+      <link rel="stylesheet" href="./assets/vendor/css/aos.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      />
+    </noscript>
+
+    <noscript>
+      <style>
+        /* Fallback para carrossel quando JS está desativado */
+        .good-things-slider .splide__list {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 20px;
+          padding: 20px;
+        }
+
+        .good-things-slider .splide__slide {
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+
+        /* Esconde elementos que dependem de JS */
+        .splide__arrows,
+        .splide__pagination {
+          display: none !important;
+        }
+      </style>
+    </noscript>
   </head>
 
   <body>
+    <!-- Skip Links -->
+    <nav class="skip-links" aria-label="Links de atalho">
+      <a href="#main" class="skip-link">Pular para conteúdo principal</a>
+      <a href="#todo-section" class="skip-link">Pular para lista de tarefas</a>
+      <a href="#contact-section" class="skip-link">Pular para contato</a>
+    </nav>
+
     <header>
       <section id="hero-section" aria-labelledby="hero-title">
         <div class="container mb-3 mb-lg-5">
@@ -109,7 +167,7 @@
       </section>
     </header>
 
-    <main>
+    <main id="main">
       <section id="todo-section" aria-labelledby="todo-title">
         <div class="container">
           <div class="row">
@@ -172,7 +230,7 @@
                   </ul>
                 </div>
                 <div class="card-plan-footer">
-                  <a href="#contact" class="btn-plan">get in touch</a>
+                  <a href="#contact-section" class="btn-plan">get in touch</a>
                 </div>
               </div>
             </div>
@@ -220,13 +278,11 @@
         </div>
       </section>
 
-      <section id="good-things-section" aria-label="Good things about Coopers">
+      <section id="good-things-section" aria-labelledby="good-things-heading">
         <div class="container good-things-container">
           <div class="row">
             <div class="col-12">
-              <h2 class="good-things-title" id="good-things-heading">
-                good things
-              </h2>
+              <h2 id="good-things-heading">good things</h2>
             </div>
           </div>
           <div class="row">
@@ -235,22 +291,20 @@
                 class="splide good-things-slider"
                 role="region"
                 aria-roledescription="carousel"
-                aria-label="Good things carousel"
-                aria-live="polite"
               >
                 <div class="splide__track">
-                  <div class="splide__list">
-                    <!-- Card 1 -->
+                  <div class="splide__list" role="presentation">
+                    <!-- Cards do carrossel com atributos ARIA melhorados -->
                     <div
                       class="splide__slide"
                       role="group"
                       aria-roledescription="slide"
                     >
-                      <div class="card-good-things">
+                      <article class="card-good-things">
                         <div class="card-good-things-header">
                           <img
                             src="./assets/img/good-things/img-01.webp"
-                            alt="Pessoa trabalhando em um notebook com interface escura, visualizando uma lista de tarefas em um ambiente com iluminação suave"
+                            alt="Pessoa trabalhando em um notebook"
                             class="svg-good-things"
                             loading="lazy"
                             width="100%"
@@ -278,7 +332,7 @@
                             />
                           </div>
                         </div>
-                      </div>
+                      </article>
                     </div>
 
                     <!-- Card 2 -->
@@ -291,7 +345,7 @@
                         <div class="card-good-things-header">
                           <img
                             src="./assets/img/good-things/img-02.webp"
-                            alt="Pessoa ao ar livre em ambiente natural, sentada sobre pedras, interagindo com dispositivo móvel, representando liberdade e produtividade"
+                            alt="Pessoa ao ar livre em ambiente natural"
                             class="svg-good-things"
                             loading="lazy"
                             width="100%"
@@ -332,7 +386,7 @@
                         <div class="card-good-things-header">
                           <img
                             src="./assets/img/good-things/img-03.webp"
-                            alt="Close-up de mãos digitando em um teclado com tecido verde ao lado, demonstrando foco em organização e planejamento"
+                            alt="Close-up de mãos costurando um tecido"
                             class="svg-good-things"
                             loading="lazy"
                             width="100%"
@@ -364,7 +418,8 @@
                     </div>
 
                     <!-- Repetição dos cards com os mesmos padrões de acessibilidade -->
-                    <!-- Card 1 (repetido) -->
+
+                    <!-- Card 1 -->
                     <div
                       class="splide__slide"
                       role="group"
@@ -374,7 +429,7 @@
                         <div class="card-good-things-header">
                           <img
                             src="./assets/img/good-things/img-01.webp"
-                            alt="Pessoa trabalhando em um notebook com interface escura, visualizando uma lista de tarefas em um ambiente com iluminação suave"
+                            alt="Pessoa trabalhando em um notebook"
                             class="svg-good-things"
                             loading="lazy"
                             width="100%"
@@ -405,7 +460,7 @@
                       </div>
                     </div>
 
-                    <!-- Card 2 (repetido) -->
+                    <!-- Card 2 -->
                     <div
                       class="splide__slide"
                       role="group"
@@ -415,7 +470,7 @@
                         <div class="card-good-things-header">
                           <img
                             src="./assets/img/good-things/img-02.webp"
-                            alt="Pessoa ao ar livre em ambiente natural, sentada sobre pedras, interagindo com dispositivo móvel, representando liberdade e produtividade"
+                            alt="Pessoa ao ar livre em ambiente natural"
                             class="svg-good-things"
                             loading="lazy"
                             width="100%"
@@ -445,48 +500,110 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    <!-- Card 3 (repetido) -->
-                    <div
-                      class="splide__slide"
-                      role="group"
-                      aria-roledescription="slide"
-                    >
-                      <div class="card-good-things">
-                        <div class="card-good-things-header">
-                          <img
-                            src="./assets/img/good-things/img-03.webp"
-                            alt="Close-up de mãos digitando em um teclado com tecido verde ao lado, demonstrando foco em organização e planejamento"
-                            class="svg-good-things"
-                            loading="lazy"
-                            width="100%"
-                            height="160"
-                          />
-                        </div>
-                        <div class="card-good-things-body">
-                          <span class="function" role="text">function</span>
-                          <h3 class="good-things-title">
-                            Careful with misunderstanding the difference between
-                            a list of things and a list of desires
-                          </h3>
-                          <a
-                            href="#"
-                            class="read-more"
-                            aria-label="Read more about understanding different types of lists"
-                            >read more</a
-                          >
-                          <div class="composition-good-things">
-                            <img
-                              src="./assets/img/good-things/composition.svg"
-                              alt=""
-                              aria-hidden="true"
-                              loading="lazy"
-                            />
-                          </div>
-                        </div>
+      <section id="contact-section" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="box-contact">
+                <div class="box-contact-header" role="presentation">
+                  <img
+                    src="assets/img/contact/person.webp"
+                    alt="Pessoa sorrindo"
+                    class="img-fluid img-contact"
+                  />
+                </div>
+                <div class="box-contact-body">
+                  <h2 id="contact-title" class="contact-title">
+                    <span class="icon-contact" aria-hidden="true">
+                      <img src="./assets/img/contact/icon-mail.svg" alt="" />
+                    </span>
+                    <span class="contact-title-text">
+                      GET IN <strong>TOUCH</strong>
+                    </span>
+                  </h2>
+                  <form
+                    id="contactForm"
+                    action="email.php"
+                    method="POST"
+                    novalidate
+                    aria-labelledby="contact-title"
+                  >
+                    <div class="form-group">
+                      <label for="name" id="name-label">Your name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Type your name here..."
+                        required
+                        aria-required="true"
+                        aria-labelledby="name-label"
+                        aria-invalid="false"
+                      />
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="email" id="email-label">Email*</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          placeholder="example@example.com"
+                          required
+                          aria-required="true"
+                          aria-labelledby="email-label"
+                          aria-invalid="false"
+                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="telephone" id="telephone-label"
+                          >Telephone*</label
+                        >
+                        <input
+                          type="tel"
+                          id="telephone"
+                          name="telephone"
+                          placeholder="+1 (___) ___-____"
+                          required
+                          aria-required="true"
+                          aria-labelledby="telephone-label"
+                          aria-invalid="false"
+                          pattern="[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}"
+                        />
                       </div>
                     </div>
-                  </div>
+
+                    <div class="form-group">
+                      <label for="message" id="message-label">Message*</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Type what you want to say to us"
+                        required
+                        aria-required="true"
+                        aria-labelledby="message-label"
+                        aria-invalid="false"
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      class="btn-send"
+                      aria-label="Send contact form"
+                    >
+                      SEND NOW
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -495,52 +612,77 @@
       </section>
     </main>
 
-    <!-- Scripts -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <h2>Need help?</h2>
+          <a href="mailto:coopers@coopers.pro" class="footer-email"
+            >coopers@coopers.pro</a
+          >
+          <p class="copyright">© 2021 Coopers. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts não críticos com loading otimizado -->
     <script
       src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
       defer
     ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
-      defer
+      async
     ></script>
     <script src="./assets/vendor/js/aos.js" defer></script>
     <script src="./assets/js/svg-inject.min.js" defer></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
-      defer
+      async
     ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
-      defer
+      async
     ></script>
-
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <!-- Preload de recursos críticos -->
+    <link
+      rel="preload"
+      href="./assets/img/header/logo.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="./assets/img/header/BG.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        new Splide(".good-things-slider", {
+        const splide = new Splide(".good-things-slider", {
           type: "loop",
           perPage: 3,
           perMove: 1,
           gap: "20px",
           arrows: false,
           pagination: true,
-          autoplay: true,
-          interval: 4000,
+          autoplay: "play",
+          interval: 3000,
           pauseOnHover: true,
-          reducedMotion: {
-            speed: 0,
-            rewindSpeed: 0,
-            autoplay: false,
-          },
+          pauseOnFocus: true,
+          rewind: true,
+          speed: 1000,
           breakpoints: {
             992: {
-              perPage: 2,
-              gap: "1rem",
+              perPage: 3,
             },
             768: {
+              perPage: 2,
+            },
+            576: {
               perPage: 1,
-              gap: "1rem",
             },
           },
           a11y: {
@@ -550,10 +692,30 @@
             next: "Next slide",
             pagination: "Carousel pagination",
             slideX: "Go to slide %s",
+            play: "Start autoplay",
+            pause: "Pause autoplay",
+            first: "Go to first slide",
+            last: "Go to last slide",
+            slideLabel: "Slide %s of %s",
           },
-        }).mount();
+        });
 
-        // Adiciona suporte a navegação por teclado
+        splide.mount();
+
+        // Add keyboard controls
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowLeft") {
+            splide.go("<");
+          } else if (e.key === "ArrowRight") {
+            splide.go(">");
+          }
+        });
+
+        setTimeout(() => {
+          splide.Components.Autoplay.play();
+        }, 100);
+
+        // Improve read more links accessibility
         document.querySelectorAll(".read-more").forEach((link) => {
           link.addEventListener("keydown", function (e) {
             if (e.key === "Enter" || e.key === " ") {
@@ -561,6 +723,13 @@
               this.click();
             }
           });
+
+          // Add descriptive text for screen readers
+          const cardTitle = link
+            .closest(".card-good-things")
+            .querySelector(".good-things-title")
+            .textContent.trim();
+          link.setAttribute("aria-label", `Read more about: ${cardTitle}`);
         });
       });
     </script>

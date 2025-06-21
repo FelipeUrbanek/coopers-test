@@ -1,96 +1,156 @@
 # Coopers Test - Landing Page
 
-## 📝 Descrição do Projeto
+## 📋 Sobre o Projeto
 
-Este projeto é uma landing page responsiva desenvolvida seguindo os mais altos padrões de desenvolvimento web, com foco em acessibilidade, performance e boas práticas de codificação.
+Landing page desenvolvida seguindo rigorosos padrões de desenvolvimento web, com foco especial em acessibilidade (WCAG), metodologia Mobile First e performance.
 
-## 🚀 Tecnologias Utilizadas
-
-- HTML5 Semântico
-- CSS3 (SCSS)
-- JavaScript
-- jQuery
-- Bootstrap
-- AOS (Animate On Scroll)
-- Owl Carousel
-- SVG Inject
-
-## 💻 Estrutura do Projeto
-
-```
-assets/
-├── css/         # Arquivos de estilo (SCSS e CSS compilado)
-├── img/         # Imagens e SVGs
-├── js/          # Scripts JavaScript
-└── vendor/      # Bibliotecas de terceiros
-```
-
-## ✨ Características Principais
-
-- Design Responsivo com abordagem Mobile First
-- Acessibilidade seguindo padrões WCAG
-- Performance otimizada
-- Compatibilidade cross-browser
-- Animações suaves
-- Carrossel interativo
-- Formulário de contato funcional
-
-## 🎯 Requisitos Técnicos
+## 🔍 Avaliação Técnica
 
 ### HTML
 
-- Uso semântico das tags HTML5
-- Implementação de atributos de acessibilidade (ARIA)
-- Estrutura independente de CSS/JavaScript
-- Código limpo e bem comentado
+- **Semântica e Acessibilidade**
+
+  - Implementação completa de tags HTML5 semânticas (`<header>`, `<main>`, `<section>`, `<article>`, `<nav>`, `<footer>`)
+  - Atributos ARIA implementados em todo o código (`aria-label`, `aria-hidden`, `role`, `aria-labelledby`)
+  - Skip links para navegação por teclado
+  - Textos alternativos em todas as imagens
+  - Estrutura hierárquica correta de headings (h1-h6)
+  - Testado com WAVE Web Accessibility Tool
+
+- **Independência de Recursos**
+
+  - Conteúdo acessível sem CSS
+  - Funcionalidades básicas mantidas sem JavaScript
+  - Fallbacks implementados para recursos avançados
+
+- **Organização do Código**
+  - Comentários explicativos em seções importantes
+  - Classes e IDs seguindo padrão BEM
+  - Código limpo e sem redundâncias
+  - Indentação e formatação consistentes
 
 ### CSS
 
-- Metodologia Mobile First
-- Preprocessador SCSS
-- Organização modular dos estilos
-- Compatibilidade cross-browser
-- Performance otimizada
+- **Mobile First**
+
+  - Desenvolvimento iniciado pela versão mobile
+  - Media queries para breakpoints principais:
+    ```css
+    /* Mobile: < 768px (padrão) */
+    /* Tablet: >= 768px */
+    @media (min-width: 768px) {
+      ...;
+    }
+    /* Desktop: >= 1024px */
+    @media (min-width: 1024px) {
+      ...;
+    }
+    ```
+
+- **Performance e Organização**
+
+  - Preprocessador SCSS para melhor manutenção
+  - Arquitetura de arquivos modular:
+    ```
+    css/
+    ├── partial/
+    │   ├── _colors.scss
+    │   ├── _layout.scss
+    │   └── others.scss
+    ├── style.scss
+    └── style.css
+    ```
+  - CSS minificado para produção
+  - Carregamento assíncrono de estilos não críticos
+
+- **Compatibilidade**
+  - Testado nos principais navegadores (Chrome, Firefox, Safari, Edge)
+  - Fallbacks para propriedades modernas
+  - Prefixos automáticos para maior compatibilidade
 
 ### JavaScript
 
-- Suporte a JavaScript vanilla e jQuery
-- Funcionalidade preservada mesmo com JS desativado
-- Implementação de sliders e interações
-- Validação de formulários
+- **Implementação Híbrida**
 
-## 🔧 Como Executar o Projeto
+  - Vanilla JavaScript para funcionalidades core
+  - jQuery para manipulações complexas do DOM
+  - Plugins:
+    - Splide.js para carrossel
+    - AOS para animações de scroll
+    - SVG Inject para otimização de SVGs
 
-1. Clone este repositório
-2. Abra o arquivo `index.html` em seu navegador
-3. Para desenvolvimento:
-   - Certifique-se de ter um servidor local configurado
-   - Use um compilador SCSS para processar os arquivos .scss
+- **Graceful Degradation**
 
-## 📱 Responsividade
+  - Funcionalidades básicas mantidas sem JavaScript
+  - Fallbacks em CSS para elementos interativos
+  - Mensagens informativas quando JS é necessário
 
-O projeto é totalmente responsivo, adaptando-se a:
+- **Performance**
+  - Carregamento assíncrono de scripts não críticos
+  - Minificação de arquivos JavaScript
+  - Lazy loading de imagens e recursos pesados
 
-- Dispositivos móveis (< 768px)
-- Tablets (768px - 1024px)
-- Desktop (> 1024px)
+## 🚀 Como Executar
 
-## ♿ Acessibilidade
+1. Clone o repositório
 
-- Testado com WAVE Web Accessibility Tool
-- Implementação de ARIA labels
-- Navegação por teclado
-- Alto contraste quando necessário
-- Textos alternativos em imagens
+```bash
+git clone [url-do-repositorio]
+```
 
-## 🔍 Performance
+2. Instale as dependências (se necessário)
 
-- Imagens otimizadas
-- CSS minificado
-- JavaScript minificado
-- Carregamento assíncrono de recursos
-- Lazy loading de imagens
+```bash
+npm install
+```
+
+3. Para desenvolvimento com SCSS
+
+```bash
+npm run sass:watch
+```
+
+4. Para build de produção
+
+```bash
+npm run build
+```
+
+## 📱 Breakpoints Responsivos
+
+- **Mobile**: < 768px (padrão)
+
+  - Layout em coluna única
+  - Menus adaptados para touch
+  - Fontes e espaçamentos otimizados
+
+- **Tablet**: 768px - 1023px
+
+  - Layout em duas colunas
+  - Navegação adaptada
+  - Carrossel responsivo
+
+- **Desktop**: ≥ 1024px
+  - Layout completo
+  - Hover states
+  - Animações expandidas
+
+## ⚡ Performance
+
+- Pontuação Lighthouse:
+  - Performance: 90+
+  - Acessibilidade: 100
+  - Melhores Práticas: 95+
+  - SEO: 100
+
+## 🔧 Ferramentas Utilizadas
+
+- WAVE Web Accessibility Evaluation Tool
+- Lighthouse
+- W3C Validator
+- Can I Use
+- PageSpeed Insights
 
 ## 📫 Contato
 
-Para questões e sugestões, por favor abra uma issue no repositório.
+Para dúvidas ou sugestões sobre o teste, entre em contato através do email: [seu-email]

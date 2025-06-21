@@ -1,20 +1,24 @@
 @import "./partial/colors";
 @import "./partial/layout";
 @import "./partial/others";
-@import "./partial/animations";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
 }
 
 p {
     margin-bottom: 0;
 }
 
-/*HEADER*/
+.container {
+    max-width: $container-xl;
+    margin: 0 auto;
+}
+
 header {
     padding: 40px 0 80px;
 
@@ -28,10 +32,6 @@ nav {
     margin: 0 auto;
 }
 
-/*HEADER*/
-
-/*HERO SECTION*/
-
 #hero-section {
     position: relative;
 
@@ -39,39 +39,39 @@ nav {
         display: flex;
         flex-direction: column;
         color: $preto-principal;
-        font-size: 40px;
-        line-height: 48px;
+        font-size: 2.5rem;
+        line-height: 1.2;
         margin-bottom: 24px;
         font-style: normal;
         font-weight: 700;
 
         strong {
             color: $verde-principal;
-            font-size: 40px;
+            font-size: 2.5rem;
             font-style: normal;
             font-weight: 400;
 
             @include responsive(l, xl) {
-                font-size: 60px;
+                font-size: 3.75rem;
             }
         }
 
         @include responsive(l, xl) {
-            font-size: 80px;
-            line-height: 64px;
+            font-size: 5rem;
+            line-height: 1.2;
             margin-bottom: 26px;
         }
     }
 
     p {
         color: $preto-principal;
-        font-size: 16px;
+        font-size: 1rem;
         margin-bottom: 24px;
         font-style: normal;
         font-weight: 400;
 
         @include responsive(l, xl) {
-            font-size: 24px;
+            font-size: 1.5rem;
             margin-bottom: 74px;
         }
     }
@@ -79,7 +79,7 @@ nav {
     .btn-hero {
         color: $branco-principal;
         text-align: center;
-        font-size: 16px;
+        font-size: 1rem;
         padding: 10px 20px;
         font-style: normal;
         font-weight: 600;
@@ -94,7 +94,7 @@ nav {
         }
 
         @include responsive(l, xl) {
-            font-size: 24px;
+            font-size: 1.5rem;
             padding: 16px 32px;
         }
     }
@@ -131,7 +131,6 @@ nav {
         display: flex;
         justify-content: center;
         margin: 50px auto 0;
-        animation: arrow-down 1s ease-in-out infinite alternate;
     }
 }
 
@@ -142,12 +141,10 @@ nav {
     z-index: -1;
 
     img {
-        // Mobile primeiro (telas menores)
         max-height: 500px;
         max-width: 100%;
         object-fit: cover;
 
-        // Tablets e Desktop
         @include responsive(m, l, xl) {
             max-height: 600px;
         }
@@ -158,10 +155,7 @@ nav {
     }
 }
 
-/*TODO SECTION*/
-
 #todo-section {
-    // Mobile primeiro
     padding: 100px 0;
     background-color: $preto-principal;
     clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
@@ -169,7 +163,6 @@ nav {
     position: relative;
     z-index: -2;
 
-    // Desktop
     @include responsive(l, xl) {
         padding: 150px 0;
         clip-path: polygon(0 25%, 100% 0, 100% 75%, 0 100%);
@@ -177,20 +170,18 @@ nav {
     }
 
     .todo-title {
-        // Mobile primeiro
         max-width: max-content;
         color: $branco-principal;
-        font-size: 32px;
+        font-size: 2rem;
         font-style: normal;
         font-weight: 600;
-        line-height: 40px;
+        line-height: 1.25;
         position: relative;
         margin: 0 auto;
 
-        // Desktop
         @include responsive(l, xl) {
-            font-size: 60px;
-            line-height: 60px;
+            font-size: 3.75rem;
+            line-height: 1;
         }
 
         &::after {
@@ -205,21 +196,18 @@ nav {
     }
 
     .todo-description {
-        // Mobile primeiro
         color: $branco-principal;
         text-align: center;
-        font-size: 16px;
+        font-size: 1rem;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         max-width: 100%;
-        margin: 0 auto;
-        margin-top: 24px;
+        margin: 24px auto 0;
         padding: 0 20px;
 
-        // Desktop
         @include responsive(l, xl) {
-            font-size: 24px;
+            font-size: 1.5rem;
             max-width: 600px;
             margin-top: 40px;
             padding: 0;
@@ -227,14 +215,10 @@ nav {
     }
 }
 
-/*PLANS SECTION*/
-
 #plans-section {
-    // Mobile First
     padding: 50px 0;
     position: relative;
 
-    // Desktop
     @include responsive(l, xl) {
         padding: 100px 0;
     }
@@ -252,63 +236,59 @@ nav {
 }
 
 .card-plan {
-    // Mobile First - estilos base
     background: $branco-principal;
     box-shadow: 0px 4px 60px 0px rgba(66, 66, 66, 0.2);
     padding: 30px 20px;
     border-top: 20px solid $verde-principal;
     margin: 12px 0;
 
-    // Desktop
     @include responsive(l, xl) {
         padding: 40px 30px;
         margin: 0;
     }
 
-    // Títulos e textos
     h3 {
         color: $preto-principal;
-        font-size: 32px; // Mobile First
+        font-size: 2rem;
         font-weight: 600;
         line-height: 1.2;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
 
         @include responsive(l, xl) {
-            font-size: 40px;
+            font-size: 2.5rem;
         }
     }
 
     p.plan-name {
         color: $preto-principal;
         text-align: center;
-        font-size: 20px; // Mobile First
+        font-size: 1.25rem;
         font-weight: 400;
         line-height: 1.4;
         display: flex;
         flex-direction: column;
 
         @include responsive(l, xl) {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
     }
 
     p.plan-feature {
         color: $preto-principal;
         text-align: center;
-        font-size: 20px; // Mobile First
+        font-size: 1.25rem;
         font-weight: 700;
         line-height: 1.4;
 
         @include responsive(l, xl) {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
     }
 
-    // Lista de features
     ul {
         list-style: none;
-        padding: 30px 0; // Mobile First
+        padding: 30px 0;
 
         @include responsive(l, xl) {
             padding: 44px 0;
@@ -316,30 +296,29 @@ nav {
     }
 
     li {
-        margin: 16px 0; // Mobile First
+        margin: 16px 0;
 
         @include responsive(l, xl) {
             margin: 20px 0;
         }
     }
 
-    // Items disponíveis e indisponíveis
     li.available,
     li.unavailable {
         color: $preto-principal;
-        font-size: 14px; // Mobile First
+        font-size: 0.875rem;
         font-weight: 400;
         line-height: 1.4;
         display: flex;
         align-items: center;
 
         @include responsive(l, xl) {
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         i {
-            width: 20px; // Mobile First
+            width: 20px;
             height: 20px;
             border-radius: 50%;
             display: flex;
@@ -365,12 +344,11 @@ nav {
         background-color: $laranja-principal;
     }
 
-    // Botão do plano
     a.btn-plan {
         background-color: $preto-principal;
         color: $branco-principal;
         text-align: center;
-        font-size: 20px; // Mobile First
+        font-size: 1.25rem;
         font-weight: 600;
         line-height: 1.4;
         text-decoration: none;
@@ -380,10 +358,10 @@ nav {
         justify-content: center;
         align-items: center;
         width: 100%;
-        transition: background-color 0.3s ease; // Melhor performance na transição
+        transition: background-color 0.3s ease;
 
         @include responsive(l, xl) {
-            font-size: 24px;
+            font-size: 1.5rem;
             padding: 15px 0;
         }
 
@@ -393,28 +371,17 @@ nav {
     }
 }
 
-/*PLANS SECTION*/
-
-/*GOOD THINGS SECTION*/
-
-#good-things-section {
-    padding: 0 0 40px 0; // Reduzido para mobile
-
-    @include responsive(l, xl) {
-        padding: 0 0 100px 0;
-    }
-}
-
 .good-things-container {
     position: relative;
-    padding: 20px; // Base padding para mobile
+    padding: 40px 15px;
+    overflow: visible;
 
     @include responsive(m) {
-        padding: 40px;
+        padding: 40px 0 40px 40px;
     }
 
     @include responsive(l, xl) {
-        padding: 80px 0px 80px 80px;
+        padding: 80px 0 40px 80px;
     }
 
     &::after {
@@ -423,27 +390,27 @@ nav {
         top: 0;
         left: 0;
         width: 100%;
-        height: 300px; // Altura menor para mobile
+        height: 300px;
         background-color: $verde-principal;
         border-radius: 10px;
         z-index: -1;
 
         @include responsive(l, xl) {
-            max-width: 1080px !important;
+            max-width: 1200px !important;
             height: 400px;
         }
     }
 
     h2 {
         color: $branco-principal;
-        font-size: 32px; // Tamanho base para mobile
+        font-size: 2rem;
         font-style: normal;
         font-weight: 700;
-        line-height: 110%;
-        margin-bottom: 24px; // Espaçamento menor para mobile
+        line-height: 1.1;
+        margin-bottom: 24px;
 
         @include responsive(l, xl) {
-            font-size: 48px;
+            font-size: 3rem;
             margin-bottom: 40px;
         }
     }
@@ -452,6 +419,8 @@ nav {
 .good-things-slider {
     padding: 8px;
     margin: -8px;
+    padding-bottom: 40px !important;
+    position: relative;
 
     .splide__track {
         padding: 8px;
@@ -463,16 +432,32 @@ nav {
     }
 
     .splide__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
         bottom: -24px;
+        left: 0;
+        padding: 0;
 
-        @include responsive(l, xl) {
-            bottom: -24px;
+        @include responsive(xl) {
+            left: -40px;
+        }
+
+        li {
+            margin: 0 5px;
         }
 
         button {
             width: 16px;
             height: 16px;
             background-color: $verde-principal;
+            transition: transform 0.3s ease;
+
+            &.is-active {
+                transform: scale(1.2);
+            }
         }
     }
 
@@ -541,17 +526,17 @@ nav {
         span.function {
             color: $azul-principal;
             font-family: "Soleil", sans-serif;
-            font-size: 14px;
+            font-size: 0.875rem;
             font-style: normal;
             font-weight: 300;
-            line-height: 120%;
+            line-height: 1.2;
             padding: 4px 10px;
             border: 1px solid $azul-principal;
             border-radius: 12px;
             display: inline-block;
 
             @include responsive(l, xl) {
-                font-size: 16px;
+                font-size: 1rem;
                 padding: 6px 12px;
                 border-radius: 16px;
             }
@@ -559,31 +544,30 @@ nav {
 
         h3.good-things-title {
             color: $azul-terciario;
-            font-family: Montserrat;
-            font-size: 16px;
+            font-size: 1rem;
             font-style: normal;
             font-weight: 400;
-            line-height: 120%;
+            line-height: 1.2;
             margin: 12px 0 36px 0;
 
             @include responsive(l, xl) {
-                font-size: 18px;
+                font-size: 1.125rem;
                 margin: 16px 0 46px 0;
             }
         }
 
         a.read-more {
             color: $verde-terciario;
-            font-size: 14px;
+            font-size: 0.875rem;
             font-style: normal;
             font-weight: 700;
-            line-height: 150%;
+            line-height: 1.5;
             text-decoration: none;
             transition: color 0.3s ease;
             display: inline-block;
 
             @include responsive(l, xl) {
-                font-size: 16px;
+                font-size: 1rem;
             }
 
             &:hover {
@@ -608,4 +592,280 @@ nav {
     }
 }
 
-/*GOOD THINGS SECTION*/
+#contact-section {
+    padding: 50px 0;
+}
+
+.box-contact-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    margin: 0 auto;
+    max-width: max-content;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: calc(50% - 11.5px);
+        left: -63px;
+        width: 146px;
+        height: 23px;
+        background-color: $verde-principal;
+        z-index: -1;
+    }
+
+    img {
+        max-width: 150px;
+        @include responsive(l, xl) {
+            max-width: 100%;
+        }
+    }
+}
+
+.box-contact-body {
+    background-color: $branco-principal;
+    padding: 120px 12px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(6, 21, 43, 0.08);
+    max-width: 700px;
+    margin: -95.6px auto 0;
+
+    @include responsive(l, xl) {
+        padding: 100px 60px 60px;
+    }
+
+    .contact-title {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 40px;
+        color: $azul-secundario;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+
+        @include responsive(l, xl) {
+            font-size: 2rem;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        .icon-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: $verde-principal;
+            border-radius: 4px;
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .contact-title-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form {
+        .form-group {
+            margin-bottom: 24px;
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+                color: $azul-secundario;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 12px 16px;
+                border: 1px solid $azul-secundario;
+                border-radius: 4px;
+                font-size: 0.875rem;
+                color: $azul-secundario;
+                transition: border-color 0.3s ease;
+
+                &::placeholder {
+                    color: $cinza-principal;
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+
+                &:focus {
+                    outline: none;
+                    border-color: $verde-principal;
+                }
+            }
+
+            textarea {
+                height: 120px;
+                resize: none;
+            }
+        }
+
+        .form-row {
+            display: flex;
+            margin: unset;
+            margin-bottom: 24px;
+            gap: 24px;
+
+            @include responsive(s) {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .form-group {
+                flex: 1;
+                margin-bottom: 0;
+            }
+        }
+
+        .btn-send {
+            width: 100%;
+            padding: 16px;
+            background-color: $verde-secundario;
+            color: $branco-principal;
+            text-align: center;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0px 16px 24px 0px rgba(6, 21, 43, 0.12);
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken($verde-principal, 5%);
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $preto-principal;
+    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+    padding: 100px 0 80px;
+    position: relative;
+    overflow-x: hidden;
+
+    &::after {
+        content: "";
+        clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 510px;
+        height: 40px;
+        background-color: $verde-principal;
+        z-index: -1;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        padding: 0 20px;
+
+        h2 {
+            color: $branco-principal;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 0.833;
+        }
+
+        .footer-email {
+            color: $branco-principal;
+            font-family: "Poppins";
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 0.75;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .copyright {
+            color: $branco-principal;
+            font-family: "Poppins";
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}
+
+.skip-links {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 1000;
+
+    .skip-link {
+        background: $preto-principal;
+        color: $branco-principal;
+        padding: 0.5rem 1rem;
+        position: absolute;
+        transform: translateY(-100%);
+        transition: transform 0.3s;
+
+        &:focus {
+            transform: translateY(100%);
+        }
+    }
+}
+
+.card-plan,
+.card-good-things {
+    contain: content;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Melhorias de foco para acessibilidade */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid $azul-principal;
+    outline-offset: 2px;
+}

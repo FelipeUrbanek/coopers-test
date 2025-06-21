@@ -1,0 +1,354 @@
+{
+  "key": "group_homepage_fields",
+  "title": "Campos da Página Inicial",
+  "fields": [
+    {
+      "key": "field_hero_section",
+      "label": "Seção Hero",
+      "name": "hero_section",
+      "type": "group",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_hero_logo",
+          "label": "Logo",
+          "name": "hero_logo",
+          "type": "image",
+          "return_format": "array"
+        },
+        {
+          "key": "field_hero_bg",
+          "label": "Imagem de Fundo",
+          "name": "hero_bg",
+          "type": "image",
+          "return_format": "array"
+        },
+        {
+          "key": "field_hero_content",
+          "label": "Conteúdo",
+          "name": "hero_content",
+          "type": "group",
+          "sub_fields": [
+            {
+              "key": "field_hero_title",
+              "label": "Título Principal",
+              "name": "title",
+              "type": "text",
+              "instructions": "Use <strong>texto</strong> para destacar palavras"
+            },
+            {
+              "key": "field_hero_description",
+              "label": "Descrição",
+              "name": "description",
+              "type": "textarea",
+              "rows": 2
+            },
+            {
+              "key": "field_hero_button",
+              "label": "Botão",
+              "name": "button",
+              "type": "link",
+              "return_format": "array"
+            },
+            {
+              "key": "field_hero_image",
+              "label": "Imagem Principal",
+              "name": "image",
+              "type": "image",
+              "return_format": "array"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_todo_section",
+      "label": "Seção To-do",
+      "name": "todo_section",
+      "type": "group",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_todo_content",
+          "label": "Conteúdo",
+          "name": "content",
+          "type": "group",
+          "sub_fields": [
+            {
+              "key": "field_todo_title",
+              "label": "Título",
+              "name": "title",
+              "type": "text"
+            },
+            {
+              "key": "field_todo_description",
+              "label": "Descrição",
+              "name": "description",
+              "type": "textarea",
+              "rows": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_plans_section",
+      "label": "Seção de Planos",
+      "name": "plans_section",
+      "type": "group",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_plans_composition",
+          "label": "Imagem de Composição",
+          "name": "composition",
+          "type": "image",
+          "return_format": "array",
+          "instructions": "Imagem decorativa que aparece no topo da seção"
+        },
+        {
+          "key": "field_plans",
+          "label": "Planos",
+          "name": "plans",
+          "type": "repeater",
+          "layout": "block",
+          "min": 1,
+          "button_label": "Adicionar Novo Plano",
+          "sub_fields": [
+            {
+              "key": "field_plan_header",
+              "label": "Informações do Plano",
+              "name": "header",
+              "type": "group",
+              "sub_fields": [
+                {
+                  "key": "field_plan_price",
+                  "label": "Preço (ex: R$ 20)",
+                  "name": "price",
+                  "type": "text"
+                },
+                {
+                  "key": "field_plan_period",
+                  "label": "Período (ex: mês)",
+                  "name": "period",
+                  "type": "text"
+                },
+                {
+                  "key": "field_plan_name",
+                  "label": "Nome do Plano",
+                  "name": "name",
+                  "type": "text",
+                  "placeholder": "Ex: Basic Plan"
+                },
+                {
+                  "key": "field_plan_highlight",
+                  "label": "Texto Destaque",
+                  "name": "highlight",
+                  "type": "text",
+                  "placeholder": "Ex: unlimited tasks"
+                }
+              ]
+            },
+            {
+              "key": "field_plan_features",
+              "label": "Características",
+              "name": "features",
+              "type": "repeater",
+              "layout": "table",
+              "button_label": "Adicionar Característica",
+              "sub_fields": [
+                {
+                  "key": "field_feature_text",
+                  "label": "Texto",
+                  "name": "text",
+                  "type": "text"
+                },
+                {
+                  "key": "field_feature_available",
+                  "label": "Disponível",
+                  "name": "available",
+                  "type": "true_false",
+                  "ui": true
+                }
+              ]
+            },
+            {
+              "key": "field_plan_button",
+              "label": "Botão",
+              "name": "button",
+              "type": "link",
+              "return_format": "array"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_good_things_section",
+      "label": "Seção Good Things",
+      "name": "good_things_section",
+      "type": "group",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_good_things_bg",
+          "label": "Imagem de Fundo",
+          "name": "background",
+          "type": "image",
+          "return_format": "array"
+        },
+        {
+          "key": "field_good_things_content",
+          "label": "Conteúdo",
+          "name": "content",
+          "type": "group",
+          "sub_fields": [
+            {
+              "key": "field_good_things_title",
+              "label": "Título",
+              "name": "title",
+              "type": "text"
+            },
+            {
+              "key": "field_good_things_cards",
+              "label": "Cards",
+              "name": "cards",
+              "type": "repeater",
+              "layout": "block",
+              "button_label": "Adicionar Card",
+              "sub_fields": [
+                {
+                  "key": "field_card_image",
+                  "label": "Imagem",
+                  "name": "image",
+                  "type": "image",
+                  "return_format": "array"
+                },
+                {
+                  "key": "field_card_tag",
+                  "label": "Tag",
+                  "name": "tag",
+                  "type": "text"
+                },
+                {
+                  "key": "field_card_title",
+                  "label": "Título",
+                  "name": "title",
+                  "type": "text"
+                },
+                {
+                  "key": "field_card_link",
+                  "label": "Link",
+                  "name": "link",
+                  "type": "link",
+                  "return_format": "array"
+                },
+                {
+                  "key": "field_card_composition",
+                  "label": "Imagem de Composição",
+                  "name": "composition",
+                  "type": "image",
+                  "return_format": "array",
+                  "instructions": "Imagem decorativa que aparece no canto do card"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_contact_section",
+      "label": "Seção de Contato",
+      "name": "contact_section",
+      "type": "group",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_contact_content",
+          "label": "Conteúdo",
+          "name": "content",
+          "type": "group",
+          "sub_fields": [
+            {
+              "key": "field_contact_icon",
+              "label": "Ícone Get in Touch",
+              "name": "icon",
+              "type": "image",
+              "return_format": "array"
+            },
+            {
+              "key": "field_contact_title",
+              "label": "Título",
+              "name": "title",
+              "type": "text"
+            },
+            {
+              "key": "field_contact_image",
+              "label": "Imagem de Contato",
+              "name": "image",
+              "type": "image",
+              "return_format": "array"
+            },
+            {
+              "key": "field_contact_form",
+              "label": "Formulário de Contato",
+              "name": "form",
+              "type": "post_object",
+              "post_type": ["wpcf7_contact_form"],
+              "return_format": "id",
+              "instructions": "Selecione o formulário do Contact Form 7 que será exibido nesta seção"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_footer_section",
+      "label": "Rodapé",
+      "name": "footer_section",
+      "type": "group",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_footer_title",
+          "label": "Título",
+          "name": "title",
+          "type": "text",
+          "default_value": "Need help?"
+        },
+        {
+          "key": "field_footer_email",
+          "label": "Email",
+          "name": "email",
+          "type": "email",
+          "default_value": "coopers@coopers.pro"
+        },
+        {
+          "key": "field_footer_copyright",
+          "label": "Copyright",
+          "name": "copyright",
+          "type": "text",
+          "default_value": "© 2021 Coopers. All rights reserved."
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_type",
+        "operator": "==",
+        "value": "front_page"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Campos personalizados para a página inicial com integração Contact Form 7"
+}
