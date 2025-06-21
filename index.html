@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coopers - Organize suas tarefas diárias</title>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon" />
+
+    <!-- Meta tags -->
+    <meta name="theme-color" content="#3A6DA7" />
+    <meta
+      name="description"
+      content="Organize suas tarefas diárias com a Coopers. Planos flexíveis e ferramentas poderosas para sua produtividade."
+    />
+    <meta name="author" content="Agência WDK" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- CSS -->
+
+    <link href="https://fonts.cdnfonts.com/css/soleil" rel="stylesheet" />
+    <link
+      href="./assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="./assets/vendor/css/aos.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <section id="hero-section" aria-labelledby="hero-title">
+        <div class="container mb-3 mb-lg-5">
+          <a href="/" class="logo" aria-label="Voltar para página inicial">
+            <img src="./assets/img/header/logo.svg" alt="Logo Coopers" />
+          </a>
+        </div>
+
+        <div class="bg-hero">
+          <img
+            src="./assets/img/header/BG.svg"
+            alt=""
+            class="svg-hero"
+            aria-hidden="true"
+          />
+        </div>
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-6">
+              <h1 id="hero-title">Organize <strong>your daily jobs</strong></h1>
+              <p class="hero-description">The only way to get things done.</p>
+              <a
+                href="#todo-section"
+                class="btn-hero"
+                aria-label="Ir para seção de lista de tarefas"
+              >
+                Meet the To-do list
+              </a>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="img-hero-container">
+                <img
+                  src="./assets/img/header/profile-header.png"
+                  alt="Ilustração de pessoa organizando tarefas"
+                  class="img-fluid img-hero"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <img
+                src="assets/img/header/arrow.svg"
+                alt=""
+                class="arrow-down"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="todo-section" aria-labelledby="todo-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h2 id="todo-title" class="todo-title">To-do List</h2>
+              <p class="todo-description">
+                Choose the right plan for you and get in touch through our
+                contact form. We are here to help.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="plans-section" aria-label="Planos disponíveis">
+        <div class="element-plans">
+          <img
+            src="./assets/img/plans/composition.svg"
+            alt=""
+            class="svg-plans"
+            aria-hidden="true"
+          />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <!-- Card Plano Básico -->
+            <div
+              class="col-12 col-sm-10 col-md-8 col-lg-4 offset-lg-2 mb-4 mb-lg-0"
+            >
+              <div class="card-plan">
+                <div class="card-plan-header">
+                  <h3 class="plan-price">R$ 20 <span>/ mês</span></h3>
+                  <p class="plan-name">
+                    Basic Plan
+                    <strong class="plan-feature">unlimited tasks</strong>
+                  </p>
+                </div>
+                <div class="card-plan-body">
+                  <ul class="plan-features" role="list">
+                    <li class="available">
+                      <i class="fa-solid fa-check" aria-hidden="true"></i>
+                      Create to-do lists
+                    </li>
+                    <li class="available">
+                      <i class="fa-solid fa-check" aria-hidden="true"></i>
+                      Share lists via WhatsApp
+                    </li>
+                    <li class="unavailable">
+                      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                      Offline mode
+                    </li>
+                    <li class="unavailable">
+                      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                      Invite colaborators
+                    </li>
+                    <li class="unavailable">
+                      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                      Dark mode
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-plan-footer">
+                  <a href="#contact" class="btn-plan">get in touch</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Plano Pro -->
+            <div class="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
+              <div class="card-plan">
+                <div class="card-plan-header">
+                  <h3 class="plan-price">R$ 30 <span>/ mês</span></h3>
+                  <p class="plan-name">
+                    Pro Plan
+                    <strong class="plan-feature">unlimited everything</strong>
+                  </p>
+                </div>
+                <div class="card-plan-body">
+                  <ul class="plan-features" role="list">
+                    <li class="available">
+                      <i class="fa-solid fa-check" aria-hidden="true"></i>
+                      Create to-do lists
+                    </li>
+                    <li class="available">
+                      <i class="fa-solid fa-check" aria-hidden="true"></i>
+                      Share lists via WhatsApp
+                    </li>
+                    <li class="available">
+                      <i class="fa-solid fa-check" aria-hidden="true"></i>
+                      Offline mode
+                    </li>
+                    <li class="available">
+                      <i class="fa-solid fa-check" aria-hidden="true"></i>
+                      Invite colaborators
+                    </li>
+                    <li class="available">
+                      <i class="fa-solid fa-check" aria-hidden="true"></i>
+                      Dark mode
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-plan-footer">
+                  <a href="#contact" class="btn-plan">get in touch</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="good-things-section" aria-label="Good things about Coopers">
+        <div class="container good-things-container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="good-things-title" id="good-things-heading">
+                good things
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div
+                class="splide good-things-slider"
+                role="region"
+                aria-roledescription="carousel"
+                aria-label="Good things carousel"
+                aria-live="polite"
+              >
+                <div class="splide__track">
+                  <div class="splide__list">
+                    <!-- Card 1 -->
+                    <div
+                      class="splide__slide"
+                      role="group"
+                      aria-roledescription="slide"
+                    >
+                      <div class="card-good-things">
+                        <div class="card-good-things-header">
+                          <img
+                            src="./assets/img/good-things/img-01.webp"
+                            alt="Pessoa trabalhando em um notebook com interface escura, visualizando uma lista de tarefas em um ambiente com iluminação suave"
+                            class="svg-good-things"
+                            loading="lazy"
+                            width="100%"
+                            height="160"
+                          />
+                        </div>
+                        <div class="card-good-things-body">
+                          <span class="function" role="text">function</span>
+                          <h3 class="good-things-title">
+                            Organize your daily job enhance your life
+                            performance
+                          </h3>
+                          <a
+                            href="#"
+                            class="read-more"
+                            aria-label="Read more about organizing your daily job"
+                            >read more</a
+                          >
+                          <div class="composition-good-things">
+                            <img
+                              src="./assets/img/good-things/composition.svg"
+                              alt=""
+                              aria-hidden="true"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                      class="splide__slide"
+                      role="group"
+                      aria-roledescription="slide"
+                    >
+                      <div class="card-good-things">
+                        <div class="card-good-things-header">
+                          <img
+                            src="./assets/img/good-things/img-02.webp"
+                            alt="Pessoa ao ar livre em ambiente natural, sentada sobre pedras, interagindo com dispositivo móvel, representando liberdade e produtividade"
+                            class="svg-good-things"
+                            loading="lazy"
+                            width="100%"
+                            height="160"
+                          />
+                        </div>
+                        <div class="card-good-things-body">
+                          <span class="function" role="text">function</span>
+                          <h3 class="good-things-title">
+                            Mark one activity as done makes your brain
+                            understands the power of doing
+                          </h3>
+                          <a
+                            href="#"
+                            class="read-more"
+                            aria-label="Read more about the power of completing tasks"
+                            >read more</a
+                          >
+                          <div class="composition-good-things">
+                            <img
+                              src="./assets/img/good-things/composition.svg"
+                              alt=""
+                              aria-hidden="true"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                      class="splide__slide"
+                      role="group"
+                      aria-roledescription="slide"
+                    >
+                      <div class="card-good-things">
+                        <div class="card-good-things-header">
+                          <img
+                            src="./assets/img/good-things/img-03.webp"
+                            alt="Close-up de mãos digitando em um teclado com tecido verde ao lado, demonstrando foco em organização e planejamento"
+                            class="svg-good-things"
+                            loading="lazy"
+                            width="100%"
+                            height="160"
+                          />
+                        </div>
+                        <div class="card-good-things-body">
+                          <span class="function" role="text">function</span>
+                          <h3 class="good-things-title">
+                            Careful with misunderstanding the difference between
+                            a list of things and a list of desires
+                          </h3>
+                          <a
+                            href="#"
+                            class="read-more"
+                            aria-label="Read more about understanding different types of lists"
+                            >read more</a
+                          >
+                          <div class="composition-good-things">
+                            <img
+                              src="./assets/img/good-things/composition.svg"
+                              alt=""
+                              aria-hidden="true"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Repetição dos cards com os mesmos padrões de acessibilidade -->
+                    <!-- Card 1 (repetido) -->
+                    <div
+                      class="splide__slide"
+                      role="group"
+                      aria-roledescription="slide"
+                    >
+                      <div class="card-good-things">
+                        <div class="card-good-things-header">
+                          <img
+                            src="./assets/img/good-things/img-01.webp"
+                            alt="Pessoa trabalhando em um notebook com interface escura, visualizando uma lista de tarefas em um ambiente com iluminação suave"
+                            class="svg-good-things"
+                            loading="lazy"
+                            width="100%"
+                            height="160"
+                          />
+                        </div>
+                        <div class="card-good-things-body">
+                          <span class="function" role="text">function</span>
+                          <h3 class="good-things-title">
+                            Organize your daily job enhance your life
+                            performance
+                          </h3>
+                          <a
+                            href="#"
+                            class="read-more"
+                            aria-label="Read more about organizing your daily job"
+                            >read more</a
+                          >
+                          <div class="composition-good-things">
+                            <img
+                              src="./assets/img/good-things/composition.svg"
+                              alt=""
+                              aria-hidden="true"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Card 2 (repetido) -->
+                    <div
+                      class="splide__slide"
+                      role="group"
+                      aria-roledescription="slide"
+                    >
+                      <div class="card-good-things">
+                        <div class="card-good-things-header">
+                          <img
+                            src="./assets/img/good-things/img-02.webp"
+                            alt="Pessoa ao ar livre em ambiente natural, sentada sobre pedras, interagindo com dispositivo móvel, representando liberdade e produtividade"
+                            class="svg-good-things"
+                            loading="lazy"
+                            width="100%"
+                            height="160"
+                          />
+                        </div>
+                        <div class="card-good-things-body">
+                          <span class="function" role="text">function</span>
+                          <h3 class="good-things-title">
+                            Mark one activity as done makes your brain
+                            understands the power of doing
+                          </h3>
+                          <a
+                            href="#"
+                            class="read-more"
+                            aria-label="Read more about the power of completing tasks"
+                            >read more</a
+                          >
+                          <div class="composition-good-things">
+                            <img
+                              src="./assets/img/good-things/composition.svg"
+                              alt=""
+                              aria-hidden="true"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Card 3 (repetido) -->
+                    <div
+                      class="splide__slide"
+                      role="group"
+                      aria-roledescription="slide"
+                    >
+                      <div class="card-good-things">
+                        <div class="card-good-things-header">
+                          <img
+                            src="./assets/img/good-things/img-03.webp"
+                            alt="Close-up de mãos digitando em um teclado com tecido verde ao lado, demonstrando foco em organização e planejamento"
+                            class="svg-good-things"
+                            loading="lazy"
+                            width="100%"
+                            height="160"
+                          />
+                        </div>
+                        <div class="card-good-things-body">
+                          <span class="function" role="text">function</span>
+                          <h3 class="good-things-title">
+                            Careful with misunderstanding the difference between
+                            a list of things and a list of desires
+                          </h3>
+                          <a
+                            href="#"
+                            class="read-more"
+                            aria-label="Read more about understanding different types of lists"
+                            >read more</a
+                          >
+                          <div class="composition-good-things">
+                            <img
+                              src="./assets/img/good-things/composition.svg"
+                              alt=""
+                              aria-hidden="true"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    <script
+      src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+      defer
+    ></script>
+    <script src="./assets/vendor/js/aos.js" defer></script>
+    <script src="./assets/js/svg-inject.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Splide(".good-things-slider", {
+          type: "loop",
+          perPage: 3,
+          perMove: 1,
+          gap: "20px",
+          arrows: false,
+          pagination: true,
+          autoplay: true,
+          interval: 4000,
+          pauseOnHover: true,
+          reducedMotion: {
+            speed: 0,
+            rewindSpeed: 0,
+            autoplay: false,
+          },
+          breakpoints: {
+            992: {
+              perPage: 2,
+              gap: "1rem",
+            },
+            768: {
+              perPage: 1,
+              gap: "1rem",
+            },
+          },
+          a11y: {
+            container: "Good things carousel",
+            items: "Slide",
+            prev: "Previous slide",
+            next: "Next slide",
+            pagination: "Carousel pagination",
+            slideX: "Go to slide %s",
+          },
+        }).mount();
+
+        // Adiciona suporte a navegação por teclado
+        document.querySelectorAll(".read-more").forEach((link) => {
+          link.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              this.click();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

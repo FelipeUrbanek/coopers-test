@@ -1,0 +1,611 @@
+@import "./partial/colors";
+@import "./partial/layout";
+@import "./partial/others";
+@import "./partial/animations";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+p {
+    margin-bottom: 0;
+}
+
+/*HEADER*/
+header {
+    padding: 40px 0 80px;
+
+    @include responsive(l, xl) {
+        padding: 60px 0 120px;
+    }
+}
+
+nav {
+    max-width: $container-xl;
+    margin: 0 auto;
+}
+
+/*HEADER*/
+
+/*HERO SECTION*/
+
+#hero-section {
+    position: relative;
+
+    h1 {
+        display: flex;
+        flex-direction: column;
+        color: $preto-principal;
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 24px;
+        font-style: normal;
+        font-weight: 700;
+
+        strong {
+            color: $verde-principal;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 400;
+
+            @include responsive(l, xl) {
+                font-size: 60px;
+            }
+        }
+
+        @include responsive(l, xl) {
+            font-size: 80px;
+            line-height: 64px;
+            margin-bottom: 26px;
+        }
+    }
+
+    p {
+        color: $preto-principal;
+        font-size: 16px;
+        margin-bottom: 24px;
+        font-style: normal;
+        font-weight: 400;
+
+        @include responsive(l, xl) {
+            font-size: 24px;
+            margin-bottom: 74px;
+        }
+    }
+
+    .btn-hero {
+        color: $branco-principal;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-decoration: none;
+        background-color: $verde-principal;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: rgba($verde-principal, 0.8);
+        }
+
+        @include responsive(l, xl) {
+            font-size: 24px;
+            padding: 16px 32px;
+        }
+    }
+
+    .row {
+        flex-direction: column-reverse;
+
+        @include responsive(l, xl) {
+            flex-direction: row;
+        }
+    }
+
+    .img-hero {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24px;
+
+        @include responsive(l, xl) {
+            justify-content: flex-end;
+            margin-bottom: 0;
+        }
+    }
+
+    .img-hero-container {
+        display: flex;
+        justify-content: center;
+
+        @include responsive(l, xl) {
+            justify-content: flex-end;
+        }
+    }
+
+    .arrow-down {
+        display: flex;
+        justify-content: center;
+        margin: 50px auto 0;
+        animation: arrow-down 1s ease-in-out infinite alternate;
+    }
+}
+
+.bg-hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    img {
+        // Mobile primeiro (telas menores)
+        max-height: 500px;
+        max-width: 100%;
+        object-fit: cover;
+
+        // Tablets e Desktop
+        @include responsive(m, l, xl) {
+            max-height: 600px;
+        }
+
+        @include responsive(xl) {
+            max-height: 100%;
+        }
+    }
+}
+
+/*TODO SECTION*/
+
+#todo-section {
+    // Mobile primeiro
+    padding: 100px 0;
+    background-color: $preto-principal;
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+    margin-top: -50px;
+    position: relative;
+    z-index: -2;
+
+    // Desktop
+    @include responsive(l, xl) {
+        padding: 150px 0;
+        clip-path: polygon(0 25%, 100% 0, 100% 75%, 0 100%);
+        margin-top: -100px;
+    }
+
+    .todo-title {
+        // Mobile primeiro
+        max-width: max-content;
+        color: $branco-principal;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 40px;
+        position: relative;
+        margin: 0 auto;
+
+        // Desktop
+        @include responsive(l, xl) {
+            font-size: 60px;
+            line-height: 60px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -7px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: $verde-principal;
+        }
+    }
+
+    .todo-description {
+        // Mobile primeiro
+        color: $branco-principal;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: 24px;
+        padding: 0 20px;
+
+        // Desktop
+        @include responsive(l, xl) {
+            font-size: 24px;
+            max-width: 600px;
+            margin-top: 40px;
+            padding: 0;
+        }
+    }
+}
+
+/*PLANS SECTION*/
+
+#plans-section {
+    // Mobile First
+    padding: 50px 0;
+    position: relative;
+
+    // Desktop
+    @include responsive(l, xl) {
+        padding: 100px 0;
+    }
+}
+
+.element-plans {
+    position: absolute;
+    bottom: 86px;
+    left: 0;
+    z-index: -1;
+
+    @include responsive(l, xl) {
+        bottom: 100px;
+    }
+}
+
+.card-plan {
+    // Mobile First - estilos base
+    background: $branco-principal;
+    box-shadow: 0px 4px 60px 0px rgba(66, 66, 66, 0.2);
+    padding: 30px 20px;
+    border-top: 20px solid $verde-principal;
+    margin: 12px 0;
+
+    // Desktop
+    @include responsive(l, xl) {
+        padding: 40px 30px;
+        margin: 0;
+    }
+
+    // Títulos e textos
+    h3 {
+        color: $preto-principal;
+        font-size: 32px; // Mobile First
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 20px;
+
+        @include responsive(l, xl) {
+            font-size: 40px;
+        }
+    }
+
+    p.plan-name {
+        color: $preto-principal;
+        text-align: center;
+        font-size: 20px; // Mobile First
+        font-weight: 400;
+        line-height: 1.4;
+        display: flex;
+        flex-direction: column;
+
+        @include responsive(l, xl) {
+            font-size: 24px;
+        }
+    }
+
+    p.plan-feature {
+        color: $preto-principal;
+        text-align: center;
+        font-size: 20px; // Mobile First
+        font-weight: 700;
+        line-height: 1.4;
+
+        @include responsive(l, xl) {
+            font-size: 24px;
+        }
+    }
+
+    // Lista de features
+    ul {
+        list-style: none;
+        padding: 30px 0; // Mobile First
+
+        @include responsive(l, xl) {
+            padding: 44px 0;
+        }
+    }
+
+    li {
+        margin: 16px 0; // Mobile First
+
+        @include responsive(l, xl) {
+            margin: 20px 0;
+        }
+    }
+
+    // Items disponíveis e indisponíveis
+    li.available,
+    li.unavailable {
+        color: $preto-principal;
+        font-size: 14px; // Mobile First
+        font-weight: 400;
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+
+        @include responsive(l, xl) {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        i {
+            width: 20px; // Mobile First
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: $branco-principal;
+
+            @include responsive(l, xl) {
+                width: 24px;
+                height: 24px;
+                margin-right: 16px;
+            }
+        }
+    }
+
+    li.available i {
+        background-color: $verde-principal;
+        font-weight: 600;
+    }
+
+    li.unavailable i {
+        background-color: $laranja-principal;
+    }
+
+    // Botão do plano
+    a.btn-plan {
+        background-color: $preto-principal;
+        color: $branco-principal;
+        text-align: center;
+        font-size: 20px; // Mobile First
+        font-weight: 600;
+        line-height: 1.4;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 12px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        transition: background-color 0.3s ease; // Melhor performance na transição
+
+        @include responsive(l, xl) {
+            font-size: 24px;
+            padding: 15px 0;
+        }
+
+        &:hover {
+            background-color: rgba($preto-principal, 0.8);
+        }
+    }
+}
+
+/*PLANS SECTION*/
+
+/*GOOD THINGS SECTION*/
+
+#good-things-section {
+    padding: 0 0 40px 0; // Reduzido para mobile
+
+    @include responsive(l, xl) {
+        padding: 0 0 100px 0;
+    }
+}
+
+.good-things-container {
+    position: relative;
+    padding: 20px; // Base padding para mobile
+
+    @include responsive(m) {
+        padding: 40px;
+    }
+
+    @include responsive(l, xl) {
+        padding: 80px 0px 80px 80px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300px; // Altura menor para mobile
+        background-color: $verde-principal;
+        border-radius: 10px;
+        z-index: -1;
+
+        @include responsive(l, xl) {
+            max-width: 1080px !important;
+            height: 400px;
+        }
+    }
+
+    h2 {
+        color: $branco-principal;
+        font-size: 32px; // Tamanho base para mobile
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%;
+        margin-bottom: 24px; // Espaçamento menor para mobile
+
+        @include responsive(l, xl) {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.good-things-slider {
+    padding: 8px;
+    margin: -8px;
+
+    .splide__track {
+        padding: 8px;
+        margin: -8px;
+    }
+
+    .splide__slide {
+        padding: 6px;
+    }
+
+    .splide__pagination {
+        bottom: -24px;
+
+        @include responsive(l, xl) {
+            bottom: -24px;
+        }
+
+        button {
+            width: 16px;
+            height: 16px;
+            background-color: $verde-principal;
+        }
+    }
+
+    @include responsive(s, m) {
+        padding: 12px;
+        margin: -12px;
+
+        .splide__track {
+            padding: 12px;
+            margin: -12px;
+        }
+
+        .splide__slide {
+            padding: 8px;
+        }
+    }
+
+    @include responsive(l, xl) {
+        padding: 24px;
+        margin: -24px;
+
+        .splide__track {
+            padding: 24px;
+            margin: -24px;
+        }
+
+        .splide__slide {
+            padding: 12px;
+        }
+    }
+}
+
+.card-good-things {
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px 0px rgba(12, 41, 208, 0.16);
+    background-color: $branco-principal;
+    height: 100%;
+
+    @include responsive(l, xl) {
+        border-radius: 16px;
+    }
+
+    .card-good-things-header {
+        img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+
+            @include responsive(l, xl) {
+                height: 200px;
+                border-radius: 16px 16px 0 0;
+            }
+        }
+    }
+
+    .card-good-things-body {
+        padding: 16px 20px;
+
+        @include responsive(l, xl) {
+            padding: 24px 30px;
+        }
+
+        position: relative;
+
+        span.function {
+            color: $azul-principal;
+            font-family: "Soleil", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 120%;
+            padding: 4px 10px;
+            border: 1px solid $azul-principal;
+            border-radius: 12px;
+            display: inline-block;
+
+            @include responsive(l, xl) {
+                font-size: 16px;
+                padding: 6px 12px;
+                border-radius: 16px;
+            }
+        }
+
+        h3.good-things-title {
+            color: $azul-terciario;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+            margin: 12px 0 36px 0;
+
+            @include responsive(l, xl) {
+                font-size: 18px;
+                margin: 16px 0 46px 0;
+            }
+        }
+
+        a.read-more {
+            color: $verde-terciario;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+
+            @include responsive(l, xl) {
+                font-size: 16px;
+            }
+
+            &:hover {
+                color: rgba($verde-terciario, 0.9);
+            }
+        }
+    }
+
+    .composition-good-things {
+        position: absolute;
+        top: -28px;
+        right: 40px;
+        z-index: 1;
+        width: 24px;
+        height: auto;
+
+        @include responsive(l, xl) {
+            top: -28px;
+            right: 20px;
+            width: auto;
+        }
+    }
+}
+
+/*GOOD THINGS SECTION*/
