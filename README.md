@@ -153,4 +153,4 @@ npm run build
 
 ## 📫 Contato
 
-Para dúvidas ou sugestões sobre o teste, entre em contato através do email: [seu-email]
+Para dúvidas ou sugestões sobre o teste, entre em contato.
